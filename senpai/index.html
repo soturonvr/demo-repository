@@ -220,7 +220,6 @@ AFRAME.registerComponent("input-listen", {
       <!-- ※2 物理演算を適用させたいオブジェクトに ammo-body,ammo-shape などのプロパティを追加する -->
       <!-- static -->
       <a-assets>
-        <a-asset-item id="daidai_gltf" src="daidai.gltf"></a-asset-item>
         <a-asset-item id="takenoko" src="takenoko.gltf"></a-asset-item>
         <a-asset-item id="penguin6" src="penguin6.gltf"></a-asset-item>
         <a-asset-item id="switch6" src="switch6.gltf"></a-asset-item>
@@ -532,16 +531,25 @@ kesu
    
 
       <!-- 床 -->
-      <a-plane
-        id="yuka"
-        ammo-body="type: static"
-        ammo-shape="type: box"
-        position="0 0 -10"
-        rotation="-90 0 0"
-        scale="30 70 50"
-        color="#ffd900"
-      ></a-plane>
-
+      <a-circle
+      id="yuka"
+      ammo-body="type: static"
+      ammo-shape="type: box"
+      position="0 0 -10"
+      rotation="-90 0 0"
+      scale="30 30 30"
+      material="color: #fff; opacity: 0.3; transparent: true"
+    ></a-circle>
+   <!-- 床を画像にする方法↓ -->
+      <!-- <a-image
+      id="yuka"
+      ammo-body="type: static"
+      ammo-shape="type: box"
+      position="0 0 -10"
+      rotation="-90 0 0"
+      scale="50 50 50"
+      src="kumoyuka.png"
+     ></a-image> -->
 
       <!--<a-plane
         ammo-body="type: static"
@@ -552,50 +560,8 @@ kesu
         color="#ffd900"
       ></a-plane>-->
       <!-- 台 -->
-      <!--1番上 -->
-      <a-plane
-      ammo-body="type: static"
-      ammo-shape="type: box"
-      position="0 4.59 -7.82"
-      rotation="-90 0 0"
-      scale="7 0.829 0" 
-      color="#ff0000"
-    ></a-plane>
-    <!--真ん中 -->
-     <a-plane
-        ammo-body="type: static"
-        ammo-shape="type: box"
-        position="0 3.596 -7"
-        rotation="-90 0 0"
-        scale="7 1 0" 
-        color="#ff0000"
-      ></a-plane>
-      <!--真ん中 -->
-      <a-plane
-      ammo-body="type: static"
-      ammo-shape="type: box"
-      position="0 2.683 -5.65"
-      rotation="-90 0 0"
-      scale="7 0.85 0" 
-      color="#ff0000"
-    ></a-plane>
-    <!--1番下-->
-    <a-plane
-    ammo-body="type: static"
-    ammo-shape="type: box"
-    position="0 1.78 -4.756"
-    rotation="-90 0 0"
-    scale="7 0.788 0" 
-    color="#ff0000"
-  ></a-plane>
+      
 <!---xが横　yが縦　zは前後-->
-   <a-gltf-model
-            src="#daidai_gltf"
-            position="0 0 -10"
-            scale="0.5 0.3 0.4"
-            rotation="0 0 0"
-          ></a-gltf-model>
-    
 <!--<a-entity 
       gltf-model="daidai.gltf"
       ammo-body="type: static"
