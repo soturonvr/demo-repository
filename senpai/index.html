@@ -9,6 +9,7 @@
     <!-- aframe-physics-system -->
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-haptics-component/dist/aframe-haptics-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   
 
   </head>
@@ -323,8 +324,21 @@ AFRAME.registerComponent("input-listen", {
 
   <!-- 真ん中 -->
 
+  <!-- ペンギン動かすコード -->
+  <a-box
+  kesu
 
-  <a-box  
+  gltf-model="penguin6.gltf"
+  rotation="0 0 0"
+  position="0 8 2.2"
+  ammo-body="type: dynamic"
+  ammo-shape="type: box"
+  scale="0.8 1 1"
+  animation="property: rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear;"
+  ></a-box>
+
+<!-- 元のコード -->
+<!--   <a-box  
   id="kesu"
   collider
   gltf-model="penguin6.gltf"
@@ -333,7 +347,8 @@ AFRAME.registerComponent("input-listen", {
   ammo-shape="type: box"
   scale="0.8 1 1"
   rotation="0 0 0"
-   ></a-box>
+   ></a-box> -->
+        
    <!--<a-entity  gltf-model = "#takenoko"
   position="0 7 2.2"
   ammo-body="type: dynamic"
