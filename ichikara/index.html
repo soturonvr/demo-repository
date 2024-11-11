@@ -10,25 +10,6 @@
 <body>
   <a-scene cursor="rayOrigin: mouse">
 
-    <!-- 赤い箱 -->
-     <!-- xyz -->
-    <a-box
-     id="box1"
-     position="0 1 -3"
-     color="red"
-     animation="property:position; from:0 1 -3; to:0 1 -8;  dur:2000; dir:alternate; loop:true; easing:linear;"
-     ></a-box>
-    
-     <!-- 青い箱 -->
-     <a-box
-     id="box2"
-     position="3 3 -3"
-     color="blue"
-     animation="property:position; from:3 3 -3; to:3 5 -8;  dur:2000; dir:alternate; loop:true; easing:linear;"
-     ></a-box>
-
-    <a-entity id="ctlR" laser-controls="hand: right" raycaster="lineColor: red;"></a-entity>
-
     <!-- 背景の設定 -->
     <a-light
         type="directional"
@@ -37,8 +18,33 @@
       ></a-light>
       <a-light type="ambient" intensity="0.2" color="#404040"></a-light>
       <a-sky src="room.jpg" rotation="0 180 0"></a-sky>
+
+    <!-- 赤い箱 -->
+     <!-- xyz -->
+    <a-box
+     id="box1"
+     position="0 1 -3"
+     color="red"
+     animation="property:position; from:0 1 -3; to:0 1 -8;  dur:2500; dir:alternate; loop:true; easing:linear;"
+     ></a-box>
     
-    <!-- ポイントのテキスト表示 -->
+     <!-- 青い箱 -->
+     <a-box
+     id="box2"
+     position="3 3 -3"
+     color="blue"
+     animation="property:position; from:3 3 -3; to:3 5 -8;  dur:1000; dir:alternate; loop:true; easing:linear;"
+     ></a-box>
+
+     <!-- 黄色い箱 -->
+     <a-box
+     id="box3"
+     position="-3 5 -5"
+     color="yellow"
+     animation="property: rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear;"
+     ></a-box>
+
+     <!-- ポイントのテキスト表示 -->
      <a-text
      id="txt"
      value=""
@@ -47,10 +53,12 @@
      align="center"
      color="#AA00FF"
     ></a-text>
+    
       
   </a-scene>
 
   <script>
+
     //カウント変数
     let get_point = 0; //獲得ポイント
     
@@ -58,6 +66,7 @@
     function updateText() { 
       txt.setAttribute('value', `point: ${get_point}`); 
     }
+
     //クリックでオブジェクトを削除する
       $('#box1').on('click', function(e) {
       	this.remove();
@@ -76,9 +85,20 @@
         get_point++;
         updateText()
       });
-    // 初期テキスト設定 
+
+      // 初期テキスト設定 
       updateText();
 
   </script>
 </body>
 </html>
+
+
+// クリックでオブジェクトの色が変わる
+// $('#box1').on('click', function(e) {
+// 	if ($(this).attr('color') == 'red') {
+//     	$(this).attr('color', 'yellow');//または e.target.setAttribute("color","yellow")
+//   }else{
+//   	$(this).attr('color', 'red');//または e.target.setAttribute("color","red")
+//   }
+// });
