@@ -37,25 +37,48 @@
       ></a-light>
       <a-light type="ambient" intensity="0.2" color="#404040"></a-light>
       <a-sky src="room.jpg" rotation="0 180 0"></a-sky>
+    
+    <!-- ポイントのテキスト表示 -->
+     <a-text
+     id="txt"
+     value=""
+     position="0 2.7 -2"
+     scale="2 2 2"
+     align="center"
+     color="#AA00FF"
+    ></a-text>
       
   </a-scene>
 
   <script>
+    //カウント変数
+    let get_point = 0; //獲得ポイント
+    
+    // テキストを更新する関数 
+    function updateText() { 
+      txt.setAttribute('value', `point: ${get_point}`); 
+    }
+    //クリックでオブジェクトを削除する
       $('#box1').on('click', function(e) {
-      	if ($(this).attr('color') == 'red') {
-          	$(this).attr('color', 'yellow');//または e.target.setAttribute("color","yellow")
-        }else{
-        	$(this).attr('color', 'red');//または e.target.setAttribute("color","red")
-        }
+      	this.remove();
+        get_point++;
+        updateText(); // テキストを更新
       });
 
       $('#box2').on('click', function(e) {
-      	if ($(this).attr('color') == 'blue') {
-          	$(this).attr('color', 'yellow');//または e.target.setAttribute("color","yellow")
-        }else{
-        	$(this).attr('color', 'red');//または e.target.setAttribute("color","red")
-        }
+      	this.remove();
+        get_point++;
+        updateText()
       });
+
+      $('#box3').on('click', function(e) {
+      	this.remove();
+        get_point++;
+        updateText()
+      });
+    // 初期テキスト設定 
+      updateText();
+
   </script>
 </body>
 </html>
