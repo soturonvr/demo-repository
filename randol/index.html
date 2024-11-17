@@ -8,7 +8,7 @@
 </head>
 <body>
   <a-scene cursor="rayOrigin: mouse">
-    <a-circle class="randoruto" position="0 1.5 -10" rotation="0 0 0" style="background-color:rgb(112, 241, 232);" src="randoruto-migi.png"></a-circle>
+    <a-circle class="randoruto" position="0 1.5 -10" rotation="0 0 0" scale="5 5 5" style="background-color:rgb(112, 241, 232);" src="randoruto-migi.png"></a-circle>
     <a-entity id="ctlR" laser-controls="hand: right" ></a-entity>
   </a-scene>
 
@@ -19,6 +19,8 @@
            	$(this).attr('src', 'randoruto-hidari.png');
          }else if($(this).attr('src') == 'randoruto-hidari.png'){$(this).attr('src', 'randoruto-ue.png');}
          else if($(this).attr('src') == 'randoruto-ue.png'){$(this).attr('src', 'randoruto-shita.png');}
+         else if($(this).attr('src') == 'randoruto-shita.png'){$(this).attr('src', 'randoruto-naname1.png');}
+         else if($(this).attr('src') == 'randoruto-naname1.png'){$(this).attr('src', 'randoruto-naname2.png');}
          else{
          	$(this).attr('src', 'randoruto-migi.png');
          }
