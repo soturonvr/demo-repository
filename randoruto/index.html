@@ -8,7 +8,7 @@
 </head>
 <body>
   <a-scene background="color: #FFFFFF" cursor="rayOrigin: mouse">
-    <a-circle class="randoruto" position="0 1.5 -10" rotation="0 0 0" scale="1 1 1" src="randoruto-migi.png"></a-circle>
+    <a-circle class="randoruto" position="0 1.5 -10" rotation="0 0 0" scale="1 1 1" src="test1.png"></a-circle>
     <!-- <a-box class="randoruto" position="0 1.5 -8" rotation="0 0 0" scale="3.7 5 10" src="3msiryoku.png"></a-box> -->
     <a-entity id="ctlR" laser-controls="hand: right" ></a-entity>
   </a-scene>
@@ -16,12 +16,12 @@
   <script>
 
         $('.randoruto').on('click', function() {
-         	if ($(this).attr('src') == 'randoruto-migi.png') {
-             	$(this).attr('src', 'randoruto-hidari.png');
-           }else if($(this).attr('src') == 'randoruto-hidari.png'){$(this).attr('src', 'randoruto-naname4.png');}
-           else if($(this).attr('src') == 'randoruto-naname4.png'){$(this).attr('src', 'randoruto_test.png');}
+         	if ($(this).attr('src') == 'test1.png') {
+             	$(this).attr('src', 'test2.png');
+           }else if($(this).attr('src') == 'test2.png'){$(this).attr('src', 'test3.png');}
+           else if($(this).attr('src') == 'test3.png'){$(this).attr('src', 'test4.png');}
            else{
-            	$(this).attr('src', 'randoruto-migi.png');
+            	$(this).attr('src', 'test1.png');
             }
          });
   </script>
