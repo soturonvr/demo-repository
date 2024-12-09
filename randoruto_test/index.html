@@ -25,7 +25,7 @@
 
   <script>
 
-         $('.randoruto1').on('click', function() {
+         $('.randoruto1').on('triggerdown', function() {
           	if ($(this).attr('src') == 'randoruto1.png') {
               	$(this).attr('src', 'randoruto2.png');
             }else if($(this).attr('src') == 'randoruto2.png') {
@@ -43,7 +43,7 @@
             }
           });
 
-          $('.randoruto2').on('click', function() {
+          $('.randoruto2').on('triggerdown', function() {
             if ($(this).attr('src') == 'randoruto1-1.png') {
               $(this).attr('src', 'randoruto2-1.png');
             }else if($(this).attr('src') == 'randoruto2-1.png') {
@@ -61,7 +61,7 @@
             }
           });
 
-          $('.randoruto3').on('click', function() {
+          $('.randoruto3').on('triggerdown', function() {
           	if ($(this).attr('src') == 'randoruto1-2.png') {
               	$(this).attr('src', 'randoruto2-2.png');
             }else if($(this).attr('src') == 'randoruto2-2.png') {
