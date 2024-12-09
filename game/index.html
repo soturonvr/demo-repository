@@ -69,7 +69,7 @@
     <a-box id="box9" position="4 10 -10" color="#ffffe0" visible="false"></a-box>
 
     <!-- オレンジの箱 -->
-    <a-box id="box10" position="6 6 -6" color="#ff8c00" visible="false"></a-box>
+    <a-box id="box10" position="-10 10 -10" color="#ff8c00" visible="false"></a-box>
 
   </a-scene>
 
@@ -126,7 +126,7 @@
         { id: '#box7', anim: 'property: rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear;' },
         { id: '#box8', anim: 'property: rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear;' },
         { id: '#box9', anim: 'property:position; from:10 12 -10; to:-10 12 -10;  dur:2700; dir:alternate; loop:true; easing:linear;' },
-        { id: '#box10', anim: 'property:position; from:6 6 -6; to:-10 10 -10;  dur:2300;' }
+        { id: '#box10', anim: 'property:position; from:-10 10 -10; to:6 6 -6;  dur:3000;dir:alternate; loop:true; easing:linear;' }
       ];
       settings.forEach(box => {
         $(box.id).attr('animation', box.anim).attr('visible', 'true');
