@@ -231,10 +231,31 @@
       document.getElementById('bgm').pause(); // BGMを停止 
       document.getElementById('FinishSound').play();//終了効果音を再生
       addFinishButton(); // フィニッシュボタンを追加 }
+      }
+    function addFinishButton() {
+      const scene = document.querySelector('a-scene');
+      const finishButton = document.createElement('a-plane');
+      finishButton.setAttribute('position', '0 1.6 -2.5');
+      finishButton.setAttribute('width', '2'); // 幅を設定
+      finishButton.setAttribute('height', '0.75'); // 高さを設定
+      finishButton.setAttribute('color', '#FF5733');
+    
+      // リンククリックでページ遷移
+      finishButton.addEventListener('click', function () {
+        window.location.href = 'https://soturonvr.github.io/demo-repository/randoruto_test/';
+      });
+    
+      // ボタンにテキストを追加
+      const buttonText = document.createElement('a-text');
+      buttonText.setAttribute('value', 'Vision test');
+      buttonText.setAttribute('color', '#FFF'); // テキストの色を設定
+      buttonText.setAttribute('align', 'center');
+      buttonText.setAttribute('position', '0 0 0.1'); // テキストの位置を調整
+    
+      finishButton.appendChild(buttonText);
+      scene.appendChild(finishButton);
     }
 
-    function addFinishButton() { const scene = document.querySelector('a-scene'); const finishButton = document.createElement('a-link'); finishButton.setAttribute('href', 'https://soturonvr.github.io/demo-repository/randoruto_test/'); finishButton.setAttribute('position', '0 0.5 -2.5'); finishButton.setAttribute('title', 'Play Another Game'); finishButton.setAttribute('image', '#link'); finishButton.setAttribute('color', '#FF5733'); scene.appendChild(finishButton);
-  }
   </script>
 </body>
 
