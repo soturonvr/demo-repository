@@ -18,6 +18,10 @@
 
   <!-- 終了時効果音追加 -->
   <audio id="FinishSound" src="Cheer-Yay.mp3"></audio>
+<!--   視力検査へのリンク -->
+  <a-link
+    id="finishButton" href="https://soturonvr.github.io/demo-repository/randoruto_test/" position="0 0.5 -2.5" title="Play Another Game" image="#link" color="#FF5733"
+   ></a-link> 
 
   <!-- 操作手段 -->
   <!-- マウス -->
@@ -226,7 +230,21 @@
       // ここで必要な終了処理を追加 
       document.getElementById('bgm').pause(); // BGMを停止 
       document.getElementById('FinishSound').play();//終了効果音を再生
+      addFinishButton(); // フィニッシュボタンを追加 }
     }
+
+    function addFinishButton() { 
+      const scene = document.querySelector('a-scene'); 
+      const finishButton = document.createElement('a-link'); 
+      finishButton.setAttribute('href', 'https://example.com'); 
+      finishButton.setAttribute('position', '0 0.5 -2.5'); 
+      finishButton.setAttribute('title', 'Play Another Game'); 
+      finishButton.setAttribute('image', '#link'); 
+      finishButton.setAttribute('color', '#FF5733'); 
+      scene.appendChild(finishButton);
+    }
+    }
+    
 
   </script>
 </body>
