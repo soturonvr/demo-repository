@@ -18,10 +18,9 @@
 
   <!-- 終了時効果音追加 -->
   <audio id="FinishSound" src="Cheer-Yay.mp3"></audio>
-<!--   視力検査へのリンク -->
-  <a-link
-    id="finishButton" href="https://soturonvr.github.io/demo-repository/randoruto_test/" position="0 0.5 -2.5" title="Play Another Game" image="#link" color="#FF5733"
-   ></a-link> 
+
+  <a-link id="finishButton" href="https://example.com" position="0 0.5 -2.5" title="Play Another Game" image="#link" color="#FF5733">
+  </a-link> 
 
   <!-- 操作手段 -->
   <!-- マウス -->
@@ -31,6 +30,10 @@
 
     <!-- 背景の設定 -->
     <a-sky src="yakei_360.jpg" rotation="0 180 0"></a-sky>
+     <!-- ライトの追加 -->
+    <!-- <a-light type="directional" intensity="1.0" position="10 100 30"></a-light>
+    <a-light type="ambient" intensity="0.2" color="#404040"></a-light> -->
+   
 
     <!-- 床 -->
     <a-plane position="0 -3 0" rotation="-90 0 0" width="6" height="5" color="#778899"></a-plane>
@@ -225,7 +228,7 @@
       document.getElementById('bgm').play();
     });
 
-    // ゲーム終了処理
+  // ゲーム終了処理
     function stopGame() {
       // ここで必要な終了処理を追加 
       document.getElementById('bgm').pause(); // BGMを停止 
@@ -233,19 +236,8 @@
       addFinishButton(); // フィニッシュボタンを追加 }
     }
 
-    function addFinishButton() { 
-      const scene = document.querySelector('a-scene'); 
-      const finishButton = document.createElement('a-link'); 
-      finishButton.setAttribute('href', 'https://example.com'); 
-      finishButton.setAttribute('position', '0 0.5 -2.5'); 
-      finishButton.setAttribute('title', 'Play Another Game'); 
-      finishButton.setAttribute('image', '#link'); 
-      finishButton.setAttribute('color', '#FF5733'); 
-      scene.appendChild(finishButton);
-    }
-    }
-    
-
+    function addFinishButton() { const scene = document.querySelector('a-scene'); const finishButton = document.createElement('a-link'); finishButton.setAttribute('href', 'https://example.com'); finishButton.setAttribute('position', '0 0.5 -2.5'); finishButton.setAttribute('title', 'Play Another Game'); finishButton.setAttribute('image', '#link'); finishButton.setAttribute('color', '#FF5733'); scene.appendChild(finishButton);
+  }
   </script>
 </body>
 
