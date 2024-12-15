@@ -8,80 +8,78 @@
 </head>
 <body>
   <a-scene background="color: #FFFFFF" cursor="rayOrigin: mouse">
-    
-    
-    <a-circle class="randoruto1" position="0 1.5 -35" rotation="0 0 0" scale="1 1 1" src="randoruto1.png"></a-circle>
-    <a-circle class="randoruto2" position="0 4.5 -35" rotation="0 0 0" scale="1 1 1" src="randoruto1-1.png"></a-circle>
-    <a-circle class="randoruto3" position="0 -1.5 -35" rotation="0 0 0" scale="1 1 1" src="randoruto1-2.png"></a-circle>
-    <a-text id="txt" value="A" position="-2.7 4.5 -35" scale="10 10 10" color="#FF0000"></a-text>
-    <a-text id="txt" value="B" position="-2.7 1.5 -35" scale="10 10 10" color="#FF0000"></a-text>
-    <a-text id="txt" value="C" position="-2.7 -1.5 -35" scale="10 10 10" color="#FF0000"></a-text>
-    <a-entity id="ctlR" laser-controls="hand: right" raycaster="lineColor: red;"></a-entity>
-    <a-entity camera position="0 1.6 30"></a-entity> <!-- ここを追加してカメラの位置を変更 --> 
+    <a-circle id="randoruto1" position="0 1.5 -10" rotation="0 0 0" scale="1 1 1" src="randoruto1.png"></a-circle>
+    <a-circle id="randoruto2" position="0 4.5 -10" rotation="0 0 0" scale="1 1 1" src="randoruto1-1.png"></a-circle>
+    <a-circle id="randoruto3" position="0 -1.5 -10" rotation="0 0 0" scale="1 1 1" src="randoruto1-2.png"></a-circle>
+    <a-text id="txt"  value="1" position="-3 4.5 -10" scale="10 10 10" color="#FF0000"></a-text>
+    <a-text id="txt"  value="2" position="-3 1.5 -10" scale="10 10 10" color="#FF0000"></a-text>
+    <a-text id="txt"  value="3" position="-3 -1.5 -10" scale="10 10 10" color="#FF0000"></a-text>
+    <a-circle id="click1"position="2 4.5 -10" scale="0.5 0.5 0.5" src="クリックのアイコン.svg"></a-circle>
+    <a-circle id="click2"position="2 1.5 -10" scale="0.5 0.5 0.5" src="クリックのアイコン.svg"></a-circle>
+    <a-circle id="click3"position="2 -1.5 -10" scale="0.5 0.5 0.5" src="クリックのアイコン.svg"></a-circle>
+    <a-entity id="ctlR" laser-controls="hand: right" ></a-entity>
   </a-scene>
-
-
 
   <script>
 
-         $('.randoruto1').on('click', function() {
-          	if ($(this).attr('src') == 'randoruto1.png') {
-              	$(this).attr('src', 'randoruto2.png');
-            }else if($(this).attr('src') == 'randoruto2.png') {
-              	$(this).attr('src', 'randoruto3.png');
-            }else if($(this).attr('src') == 'randoruto3.png') {
-              	$(this).attr('src', 'randoruto4.png');
-            }else if($(this).attr('src') == 'randoruto4.png') {
-              	$(this).attr('src', 'randoruto5.png');
-            }else if($(this).attr('src') == 'randoruto5.png') {
-              	$(this).attr('src', 'randoruto6.png');
-            }else if($(this).attr('src') == 'randoruto6.png') {
-              	$(this).attr('src', 'randoruto7.png');
-            }else if($(this).attr('src') == 'randoruto7.png') {
-              	$(this).attr('src', 'randoruto8.png');
-            }
-          });
+    $('#click1').on('click', function() {
+      var $image = $('#randoruto2');
+      if ($image.attr('src') == 'randoruto1-1.png') {
+        $image.attr('src', 'randoruto2-1.png');
+      } else if ($image.attr('src') == 'randoruto2-1.png') {
+        $image.attr('src', 'randoruto3-1.png');
+      } else if ($image.attr('src') == 'randoruto3-1.png') {
+        $image.attr('src', 'randoruto4-1.png');
+      } else if ($image.attr('src') == 'randoruto4-1.png') {
+        $image.attr('src', 'randoruto5-1.png');
+      } else if ($image.attr('src') == 'randoruto5-1.png') {
+        $image.attr('src', 'randoruto6-1.png');
+      } else if ($image.attr('src') == 'randoruto6-1.png') {
+        $image.attr('src', 'randoruto7-1.png');
+      } else if ($image.attr('src') == 'randoruto7-1.png') {
+        $image.attr('src', 'randoruto8-1.png');
+      }
+    });
 
-          $('.randoruto2').on('click', function() {
-            if ($(this).attr('src') == 'randoruto1-1.png') {
-              $(this).attr('src', 'randoruto2-1.png');
-            }else if($(this).attr('src') == 'randoruto2-1.png') {
-              $(this).attr('src', 'randoruto3-1.png');
-            }else if($(this).attr('src') == 'randoruto3-1.png') {
-           $(this).attr('src', 'randoruto4-1.png');
-            }else if($(this).attr('src') == 'randoruto4-1.png') {
-              	$(this).attr('src', 'randoruto5-1.png');
-            }else if($(this).attr('src') == 'randoruto5-1.png') {
-              	$(this).attr('src', 'randoruto6-1.png');
-            }else if($(this).attr('src') == 'randoruto6-1.png') {
-              	$(this).attr('src', 'randoruto7-1.png');
-            }else if($(this).attr('src') == 'randoruto7-1.png') {
-              	$(this).attr('src', 'randoruto8-1.png');
-            }
-          });
+    $('#click2').on('click', function() {
+      console.log('Text 2 clicked'); // Debugging log
+      var $image = $('#randoruto1');
+      if ($image.attr('src') == 'randoruto1.png') {
+        $image.attr('src', 'randoruto2.png',"txt1");
+      } else if ($image.attr('src') == 'randoruto2.png') {
+        $image.attr('src', 'randoruto3.png');
+      } else if ($image.attr('src') == 'randoruto3.png') {
+        $image.attr('src', 'randoruto4.png');
+      } else if ($image.attr('src') == 'randoruto4.png') {
+        $image.attr('src', 'randoruto5.png');
+      } else if ($image.attr('src') == 'randoruto5.png') {
+        $image.attr('src', 'randoruto6.png');
+      } else if ($image.attr('src') == 'randoruto6.png') {
+        $image.attr('src', 'randoruto7.png');
+      } else if ($image.attr('src') == 'randoruto7.png') {
+        $image.attr('src', 'randoruto8.png');
+      }
+    });
 
-          $('.randoruto3').on('click', function() {
-          	if ($(this).attr('src') == 'randoruto1-2.png') {
-              	$(this).attr('src', 'randoruto2-2.png');
-            }else if($(this).attr('src') == 'randoruto2-2.png') {
-              	$(this).attr('src', 'randoruto3-2.png');
-            }else if($(this).attr('src') == 'randoruto3-2.png') {
-              	$(this).attr('src', 'randoruto4-2.png');
-            }else if($(this).attr('src') == 'randoruto4-2.png') {
-              	$(this).attr('src', 'randoruto5-2.png');
-            }else if($(this).attr('src') == 'randoruto5-2.png') {
-              	$(this).attr('src', 'randoruto6-2.png');
-            }else if($(this).attr('src') == 'randoruto6-2.png') {
-              	$(this).attr('src', 'randoruto7-2.png');
-            }else if($(this).attr('src') == 'randoruto7-2.png') {
-              	$(this).attr('src', 'randoruto8-2.png');
-            }
-          });
-
-          
-
-
+    $('#click3').on('click', function() {
+      console.log('Text 3 clicked'); // Debugging log
+      var $image = $('#randoruto3');
+      if ($image.attr('src') == 'randoruto1-2.png') {
+        $image.attr('src', 'randoruto2-2.png');
+      } else if ($image.attr('src') == 'randoruto2-2.png') {
+        $image.attr('src', 'randoruto3-2.png');
+      } else if ($image.attr('src') == 'randoruto3-2.png') {
+        $image.attr('src', 'randoruto4-2.png');
+      } else if ($image.attr('src') == 'randoruto4-2.png') {
+        $image.attr('src', 'randoruto5-2.png');
+      } else if ($image.attr('src') == 'randoruto5-2.png') {
+        $image.attr('src', 'randoruto6-2.png');
+      } else if ($image.attr('src') == 'randoruto6-2.png') {
+        $image.attr('src', 'randoruto7-2.png');
+      } else if ($image.attr('src') == 'randoruto7-2.png') {
+        $image.attr('src', 'randoruto8-2.png');
+      }
+    });
   </script>
-
 </body>
 </html>
