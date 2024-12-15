@@ -26,8 +26,6 @@
     <a-entity id="ctlR" laser-controls="hand: right" raycaster="lineColor: red;"></a-entity>
 
     <!-- 背景の設定 -->
-    <a-light type="directional" intensity="1.0" position="10 100 30"></a-light>
-    <a-light type="ambient" intensity="0.2" color="#404040"></a-light>
     <a-sky src="yakei_360.jpg" rotation="0 180 0"></a-sky>
 
     <!-- 床 -->
@@ -71,35 +69,66 @@
     <!-- オレンジの箱 -->
     <a-box id="box10" position="-10 10 -10" color="#ff8c00" visible="false"></a-box>
 
-    <!-- あざやかな赤紫 -->
+    <!-- あざやかな赤紫1 -->
     <a-box id="box11" position="-10 -10 4" color="#c71585" visible="false"></a-box>
 
-    <!-- 黄色い箱 -->
+    <!-- 黄色い箱 1-->
     <a-box id="box12" position="-20 15 6" color="yellow" visible="false"></a-box>
 
-    <!-- 緑の箱 -->
+    <!-- 緑の箱 1-->
     <a-box id="box13" position="-15 17 9" color="#228b22" visible="false"></a-box>
 
-    <!-- 紫の箱 -->
+    <!-- 紫の箱 1-->
     <a-box id="box14" position="-15 11 12" color="#ba55d3" visible="false"></a-box>
 
-    <!-- 水色の箱 -->
+    <!-- 水色の箱 1-->
     <a-box id="box15" position="12 16 2" color="#00bfff" visible="false"></a-box>
 
-    <!-- ベージュの箱 -->
+    <!-- ベージュの箱 1-->
     <a-box id="box16" position="-15 5 10" color="#ffdab9" visible="false"></a-box>
 
-    <!-- ピンクの箱 -->
+    <!-- ピンクの箱 1-->
     <a-box id="box17" position="-14 10 14" color="#ff69b4" visible="false"></a-box>
 
-    <!-- 薄黄色の箱 -->
+    <!-- 薄黄色の箱1 -->
     <a-box id="box18" position="-21 10 20" color="#ffffe0" visible="false"></a-box>
 
-    <!-- オレンジの箱 -->
+    <!-- オレンジの箱 1-->
     <a-box id="box19" position="-10 4 18" color="#ff8c00" visible="false"></a-box>
 
-    <!-- 青い箱 -->
+    <!-- 青い箱 1-->
     <a-box id="box20" position="-23 -20 25" color="blue" visible="false"></a-box>
+
+    <!-- 赤い箱2 -->
+    <!-- xyz -->
+    <a-box id="box21" position="18 12 -5" color="red" visible="false"></a-box>
+
+    <!-- 青い箱2 -->
+    <a-box id="box22" position="9 8 13" color="blue" visible="false"></a-box>
+
+    <!-- 黄色い箱2 -->
+    <a-box id="box23" position="10 8 16" color="yellow" visible="false"></a-box>
+
+    <!-- 緑の箱2 -->
+    <a-box id="box24" position="12 5 19" color="#228b22" visible="false"></a-box>
+
+    <!-- 紫の箱2 -->
+    <a-box id="box25" position="13 1 21" color="#ba55d3" visible="false"></a-box>
+
+    <!-- 水色の箱2 -->
+    <a-box id="box26" position="10 10 10" color="#00bfff" visible="false"></a-box>
+
+    <!-- ベージュの箱2 -->
+    <a-box id="box27" position="15 2 -1" color="#ffdab9" visible="false"></a-box>
+
+    <!-- ピンクの箱2 -->
+    <a-box id="box28" position="16 10 2" color="#ff69b4" visible="false"></a-box>
+
+    <!-- 黄緑の箱2 -->
+    <a-box id="box29" position="10 12 1" color="#00ff00" visible="false"></a-box>
+
+    <!-- オレンジの箱2 -->
+    <a-box id="box30" position="10 2 5" color="#ff8c00" visible="false"></a-box>
 
   </a-scene>
 
@@ -111,7 +140,7 @@
 
     // テキストを更新する関数
     function updateText() {
-      if (get_point < 20) {
+      if (get_point < 30) {
         txt.setAttribute('value', `point: ${get_point}`);
       } else {
         txt.setAttribute('value', 'Finish!!');
@@ -120,8 +149,10 @@
     }
 
     // クリックでオブジェクトを削除する
-    ['#box1', '#box2', '#box3', '#box4', '#box5',
-      '#box6', '#box7', '#box8', '#box9', '#box10', '#box11', '#box12', '#box13', '#box14', '#box15', '#box16', '#box17', '#box18', '#box19','#box20'].forEach(id => {
+    ['#box1', '#box2', '#box3', '#box4', '#box5','#box6', '#box7', '#box8', '#box9', '#box10', 
+     '#box11', '#box12', '#box13', '#box14', '#box15', '#box16', '#box17', '#box18', '#box19','#box20',
+     '#box21', '#box22', '#box23', '#box24', '#box25','#box26', '#box27', '#box28', '#box29', '#box30'
+    ].forEach(id => {
         $(id).on('click', function (e) {
           this.remove();
           get_point++;
@@ -131,8 +162,10 @@
       });
 
     //コントローラでオブジェクトを消去する
-    ['#box1', '#box2', '#box3', '#box4', '#box5',
-      '#box6', '#box7', '#box8', '#box9', '#box10', '#box11', '#box12', '#box13', '#box14', '#box15', '#box16', '#box17', '#box18', '#box19','#box20'].forEach(id => {
+    ['#box1', '#box2', '#box3', '#box4', '#box5','#box6', '#box7', '#box8', '#box9', '#box10', 
+     '#box11', '#box12', '#box13', '#box14', '#box15', '#box16', '#box17', '#box18', '#box19','#box20',
+     '#box21', '#box22', '#box23', '#box24', '#box25','#box26', '#box27', '#box28', '#box29', '#box30'
+    ].forEach(id => {
         $(id).on('triggerdown', function (e) {
           this.remove();
           get_point++;
@@ -166,7 +199,17 @@
         { id: '#box17', anim: 'property: rotation; to:0 360 0; dur: 10000; loop: true; easing: linear;' },
         { id: '#box18', anim: 'property: rotation; to:0 360 0; dur: 10000; loop: true; easing: linear;' },
         { id: '#box19', anim: 'property:position; from:-10 4 18; to:-10 12 -10;  dur:2700; dir:alternate; loop:true; easing:linear;' },
-        { id: '#box20', anim: 'property:position; from:-23 -20 25; to:16 16 30;  dur:3000;dir:alternate; loop:true; easing:linear;' }
+        { id: '#box20', anim: 'property:position; from:-23 -20 25; to:16 16 30;  dur:3000;dir:alternate; loop:true; easing:linear;' },
+        { id: '#box21', anim: 'property:rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear;' },
+        { id: '#box22', anim: 'property:position; from:12 6 7; to:17 6 -12;  dur:2100; dir:alternate; loop:true; easing:linear;' },
+        { id: '#box23', anim: 'property:position; from:12 18 -12; to:12 18 12;  dur:2100; dir:alternate; loop:true; easing:linear;' },
+        { id: '#box24', anim: 'property:position; from:12 -2 4; to:12 14 4;  dur:2100; dir:alternate; loop:true; easing:linear;' },
+        { id: '#box25', anim: 'property:position; from:4 0 -3; to:19 4 7;  dur:2100; dir:alternate; loop:true; easing:linear;' },
+        { id: '#box26', anim: 'property:rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear;' },
+        { id: '#box27', anim: 'property:position; from:17 15 -12; to:2 6 -1;  dur:2100; dir:alternate; loop:true; easing:linear;' },
+        { id: '#box28', anim: 'property:position; from:17 3 -12; to:2 1 4;  dur:2500; dir:alternate; loop:true; easing:linear;' },
+        { id: '#box29', anim: 'property:rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear;' },
+        { id: '#box30', anim: 'property:rotation; to: 0 360 0; dur: 10000; loop: true; easing: linear;' }
       ];
       settings.forEach(box => {
         $(box.id).attr('animation', box.anim).attr('visible', 'true');
